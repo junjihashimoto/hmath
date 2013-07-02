@@ -1,5 +1,5 @@
 #!/usr/bin/env runghc
- {-# LANGUAGE UnicodeSyntax #-}
+{-# LANGUAGE UnicodeSyntax #-}
 
 -- past studies
 -- http://www.haskell.org/haskellwiki/Unicode-symbols
@@ -16,9 +16,9 @@ m1 = Matrix {value=[1,2,3]}
 -- a = zipWith(+) value m0 value m1
 -- a = zipWith(+) (value m0) (value m1)
 
--- sum_ :: Int -> a -> Int -> (Int->Int) -> Int
+-- sum_ :: Int -> a -> b -> Int -> (Int->Int) -> Int
      
-sum_ a _ b f = foldr (+) 0 (map (f) [b..a])
+sum_ a _ _ b f = foldr (+) 0 (map (f) [b..a])
 
 (∑) = sum_
 i_eq = 0
@@ -30,7 +30,8 @@ i_eq = 0
 -- t = ∑³ᵢ₌₁ 2*x+1  --NG
 -- t = ∑3ᵢ₌1 (\x -> 2*x+1) --NG
 -- t = (∑) 3 (ᵢ₌) 1 (\x -> 2*x+1)  --NG
-t = (∑) 3 (ᵢ) 1 (\x -> 2*x+1)  --NG
+t  = (∑) 3 (ᵢ) (₌) 1 (\x -> 2*x+1)
+t2 = (∑)3(ᵢ)(₌)1(\x -> 2*x+1)
 
 class Op a where
 --      (∑) :: a -> a
